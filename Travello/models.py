@@ -8,3 +8,4 @@ class Destination:
     description:str
     img:str
     price:float
+    offer:bool
