@@ -133,3 +133,8 @@ STATICFILES_DIRS=[
 
 # django use its own folder to treats with static files
 STATIC_ROOT=os.path.join(BASE_DIR,'assets')
+
+
+# specify the location of the media files
+MEDIA_URL= '/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
