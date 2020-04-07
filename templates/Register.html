@@ -9,10 +9,11 @@
 </head>
 <body>      
     <form action="Register" method="POST">
+    {% csrf_token %}
         <div class="container">
           <h1>Register</h1>
           <p>Please fill in this form to create an account.</p>
-          {% csrf_token %}
+          
           <input type="text" placeholder="Enter Username" name="username" required>
           
           <input type="text" placeholder="Enter First name" name="firstname" >
@@ -32,5 +33,10 @@
           <p>Already have an account? <a href="Login">Sign in</a>.</p>
         </div>
       </form>
+      {% if messages%}
+        {% for message in messages%}
+        <div><p>{{message}}</p></div>
+        {% endfor %}
+      {% endif%}
 </body>
 </html>
