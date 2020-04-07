@@ -46,5 +46,18 @@ def Register(request):
     else:
         return render(request,'Register.html')
 
-def Login(request):
-    return render(request,'Login.html')
+def Login(request):    
+    if request.method=='POST':
+        username=request.POST['username']
+        password=request.POST['password']
+        user=auth.authenticate(username=username,password=password)
+        print(username,password)
+        if(user is not None):
+            auth.login(request,user)
+            messages.info(request,username)
+            return redirect('/')
+        else:
+            messages.info(request,'test')
+            return redirect('Login')
+    else:
+        return render(request,'Login.html')

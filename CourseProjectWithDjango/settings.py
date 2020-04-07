@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # determine the name that i work with to make the migration models
     'Travello.apps.TravelloConfig',
+    'Usermanagement.apps.UsermanagementConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
